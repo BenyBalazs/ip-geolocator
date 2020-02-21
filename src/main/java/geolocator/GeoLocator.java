@@ -4,10 +4,11 @@ import java.net.URL;
 
 import java.io.IOException;
 
+
 import com.google.gson.Gson;
-
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 import com.google.common.net.UrlEscapers;
-
 import org.apache.commons.io.IOUtils;
 
 public class GeoLocator {
@@ -41,6 +42,10 @@ public class GeoLocator {
         } catch (IOException e) {
             System.err.println(e.getMessage());
         }
+    }
+    public String toString(){
+
+        return ReflectionToStringBuilder.toString(this, ToStringStyle.MULTI_LINE_STYLE);
     }
 
 }
